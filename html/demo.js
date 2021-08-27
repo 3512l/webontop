@@ -90,3 +90,6 @@ function publish(){
 	document.getElementById("messages").innerHTML += showPub;
     updateScroll(); // Scroll to bottom of window
 }
+function GOTOREMOTE(){
+    <a herf = "Remote.html"></a>
+}
