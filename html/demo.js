@@ -4,10 +4,10 @@ function startConnect() {
     clientID = "clientID-" + parseInt(Math.random() * 100);
 
     // Fetch the hostname/IP address and port number from the form
-    host = document.getElementById("host").value;
-    port = document.getElementById("port").value;
-	usr = document.getElementById("usr").value;
-	pwd = document.getElementById("pwd").value;
+    host = "34.67.195.135";
+    port = "9001";
+	usr = "usr01";
+	pwd = "1234";
 
     // Print output for the user in the messages div
     document.getElementById("messages").innerHTML += '<span>Connecting to: ' + host + ' on port: ' + port + '</span><br/>';
@@ -36,7 +36,7 @@ function startConnect() {
 // Called when the client connects
 function onConnect() {
     // Fetch the MQTT topic from the form
-    topic = document.getElementById("topic").value;
+    topic = "fish1"
 
     // Print output for the user in the messages div
     document.getElementById("messages").innerHTML += '<span>Subscribing to: ' + topic + '</span><br/>';
@@ -76,8 +76,10 @@ function updateScroll() {
 function publish(){
 	//read data from form
 	pubMsg = document.getElementById("pubMsg").value;
+    pubMsg1 = document.getElementById("pubMsg1").value;
 	pubTopic = document.getElementById("pubTopic").value;
-	
+	pubMsg = pubMsg1+"#"+pubMsg;
+
 	//publish message
 	message = new Paho.MQTT.Message(pubMsg);
 	message.destinationName = pubTopic;
